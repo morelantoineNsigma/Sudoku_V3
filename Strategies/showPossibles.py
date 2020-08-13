@@ -1,3 +1,6 @@
+import logging
+
+
 def possible(grille, i, j, n):
 	for k in range(9):
 		if grille[i][k] == n:
@@ -12,12 +15,11 @@ def possible(grille, i, j, n):
 
 
 def showPossibles(grille, possibles):
-	effect = False
+	logging.info('updating possibles')
 	for i in range(9):
 		for j in range(9):
 			for n in range(1, 10):
 				if grille[i][j] == 0:
 					if n in possibles[i][j] and not possible(grille, i, j, n):
 						possibles[i][j].discard(n)
-						effect = True
-	return grille, possibles, effect
+	return possibles
