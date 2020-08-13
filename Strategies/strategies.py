@@ -1,9 +1,13 @@
 from Strategies.solvedCells import solvedCells
 from Strategies.showPossibles import showPossibles
 from Strategies.hiddenSingles import hiddenSingles
+from Strategies.hiddenPairs import hiddenPairs
+from Strategies.hiddenTriples import hiddenTriples
+from Strategies.nakedPairs import nakedPairs
+from Strategies.nakedTriples import nakedTriples
 
 
-order = [solvedCells, hiddenSingles]
+order = [solvedCells, hiddenSingles, hiddenPairs, hiddenTriples, nakedPairs, nakedTriples]
 
 
 def apply_step(grille, possibles):
@@ -15,9 +19,3 @@ def apply_step(grille, possibles):
 	return grille, possibles, effect
 
 
-
-# effect  len(order) >= i   	continue
-# 0		0					1
-# 1		0					0
-# 0		1					0
-# 1		1					0
