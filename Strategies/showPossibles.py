@@ -18,8 +18,8 @@ def showPossibles(grille, possibles):
 	logging.info('updating possibles')
 	for i in range(9):
 		for j in range(9):
-			for n in range(1, 10):
-				if grille[i][j] == 0:
+			if grille[i][j] == 0:
+				for n in range(1, 10):
 					if n in possibles[i][j] and not possible(grille, i, j, n):
 						possibles[i][j].discard(n)
 	return possibles

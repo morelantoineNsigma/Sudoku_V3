@@ -17,7 +17,7 @@ def hiddenSinglesLine(grille, possibles, i):
 	return grille, possibles, effect
 
 
-def hiddenColumnColumn(grille, possibles, j):
+def hiddenSinglesColumn(grille, possibles, j):
 	effect = False
 	for n in range(1,9):
 		if n not in [grille[i][j] for i in range(9)]:
@@ -56,7 +56,7 @@ def hiddenSingles(grille, possibles):
 	effect = False
 	for i in range(9):
 		grille, possibles, effectL = hiddenSinglesLine(grille, possibles, i)
-		grille, possibles, effectC = hiddenColumnColumn(grille, possibles, i)
+		grille, possibles, effectC = hiddenSinglesColumn(grille, possibles, i)
 		grille, possibles, effectB = hiddenSinglesBox(grille, possibles, i)
 		effect = effectL or effectC or effectB or effect
 
