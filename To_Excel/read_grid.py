@@ -5,7 +5,7 @@ def read_grid(file, sheet=0, row=0, col=0):
 	grille = [[0 for _ in range(9)] for j in range(9)]
 
 	wb = xlrd.open_workbook(file)
-	s = wb.sheet_by_index(0)
+	s = wb.sheet_by_index(sheet)
 
 	for i in range(9):
 		for j in range(9):
